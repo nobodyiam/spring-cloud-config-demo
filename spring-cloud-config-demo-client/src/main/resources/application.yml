@@ -6,6 +6,7 @@ endpoints:
 server:
   port: 8080
 logging:
+  file: /opt/logs/spring-cloud-config-demo-client.log
   levels:
     org.springframework.boot.env.PropertySourcesLoader: TRACE
     org.springframework.web: DEBUG

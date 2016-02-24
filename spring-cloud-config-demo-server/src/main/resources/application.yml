@@ -13,3 +13,6 @@ server:
   port: 8888
 management:
   context_path: /admin
+
+logging:
+  file: /opt/logs/spring-cloud-config-demo-server.log
