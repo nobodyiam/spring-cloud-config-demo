@@ -6,3 +6,4 @@ spring:
   cloud:
     config:
       uri: http://10.3.2.56:8888
+      label: someBranch
