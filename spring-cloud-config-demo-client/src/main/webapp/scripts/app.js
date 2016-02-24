@@ -6,6 +6,4 @@
         'httpInterceptors' //custom http interceptor
     ]);
 
-    alert("OK");
-
 })(jQuery);
