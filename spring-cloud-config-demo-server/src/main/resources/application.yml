@@ -7,7 +7,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/nobodyiam/config-repo
+          uri: ssh://git@10.3.2.56:1022/spring-cloud-config-repo.git
 
 server:
   port: 8888

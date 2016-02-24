@@ -1,5 +1,6 @@
 package com.nobodyiam.spring.cloud.config.demo.server;
 
+import com.jcraft.jsch.JSch;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.config.server.EnableConfigServer;
@@ -14,6 +15,7 @@ import org.springframework.context.annotation.Configuration;
 public class ConfigServerApplication {
 
     public static void main(String[] args) {
+        JSch.setConfig("StrictHostKeyChecking", "no");//for git server key
         new SpringApplicationBuilder(ConfigServerApplication.class)
                 .run(args);
     }
