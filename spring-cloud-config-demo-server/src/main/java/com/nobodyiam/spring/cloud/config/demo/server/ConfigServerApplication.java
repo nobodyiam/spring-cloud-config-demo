@@ -1,4 +1,4 @@
-package com.nobodyiam.spring.cloud.config.demo;
+package com.nobodyiam.spring.cloud.config.demo.server;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
