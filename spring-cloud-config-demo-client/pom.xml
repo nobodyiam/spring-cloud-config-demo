@@ -18,6 +18,7 @@
         <java.target.version>1.7</java.target.version>
         <project.encoding>UTF-8</project.encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <start-class>com.nobodyiam.spring.cloud.config.demo.client.Application</start-class>
     </properties>
 
     <dependencies>
