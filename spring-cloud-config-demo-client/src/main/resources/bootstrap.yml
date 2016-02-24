@@ -5,4 +5,4 @@ spring:
     active: production
   cloud:
     config:
-      uri: http://localhost:${config.port:8888}
+      uri: http://10.3.2.56:8888
