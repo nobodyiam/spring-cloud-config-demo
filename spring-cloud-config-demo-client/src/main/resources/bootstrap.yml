@@ -1,6 +1,8 @@
 spring:
   application:
-    name: bar
+    name: foo
+  profiles:
+    active: production
   cloud:
     config:
       uri: http://localhost:${config.port:8888}
