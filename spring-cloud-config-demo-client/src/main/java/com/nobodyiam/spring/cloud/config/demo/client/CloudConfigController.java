@@ -1,5 +1,6 @@
 package com.nobodyiam.spring.cloud.config.demo.client;
 
+import com.nobodyiam.spring.cloud.config.demo.model.Config;
 import com.nobodyiam.spring.cloud.config.demo.model.EnvironmentConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -22,12 +23,11 @@ public class CloudConfigController {
     private Environment env;
 
     @RequestMapping(value = "/config/{configName}", method = RequestMethod.GET)
-    public String queryConfig(@PathVariable String configName) {
-        return env.getProperty(configName, "undefined");
+    public Config queryConfig(@PathVariable String configName) {
+        return new Config(configName, env.getProperty(configName, "undefined"));
     }
 
     @RequestMapping(value = "/env", method = RequestMethod.GET)
-    @ResponseBody
     public EnvironmentConfig queryEnv() {
         return EnvironmentConfig.builder()
                 .application(env.getProperty(APPLICATION_NAME_CONFIG))

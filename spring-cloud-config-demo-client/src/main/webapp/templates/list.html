@@ -1,24 +1,59 @@
 <div ng-controller="CloudConfigController as configCtrl">
     <h1>Spring cloud config client sample</h1>
 
-    <h3>Current client env:</h3>
-    <table class="table table-bordered table-hover">
-        <thead>
-        <tr class="bg-info">
-            <th>Application</th>
-            <th>Profiles</th>
-            <th>Label</th>
-            <th>Server Uri</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>{{configCtrl.env.application}}</td>
-            <td>{{configCtrl.env.profiles}}</td>
-            <td>{{configCtrl.env.label}}</td>
-            <td>{{configCtrl.env.serverUri}}</td>
-        </tr>
-        </tbody>
-    </table>
+    <div id="env-wrapper">
+        <h3>Current Client Env:</h3>
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr class="bg-info">
+                <th>Application</th>
+                <th>Profiles</th>
+                <th>Label</th>
+                <th>Server Uri</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{configCtrl.env.application}}</td>
+                <td>{{configCtrl.env.profiles}}</td>
+                <td>{{configCtrl.env.label}}</td>
+                <td>{{configCtrl.env.serverUri}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="load-config-wrapper">
+        <h3>Load Config:</h3>
+        <form name="loadConfigForm" class="form-horizontal" novalidate ng-submit="configCtrl.queryConfig()">
+            <div class="form-group"
+                 ng-class="{ 'has-error' : loadConfigForm.configName.$invalid && loadConfigForm.configName.$dirty}">
+                <div id="input-config-wrapper" class="clearfix">
+                    <label class="col-sm-2 control-label">Config Name</label>
+
+                    <div class="col-sm-3">
+                        <input type="text" name="configName" class="form-control"
+                               ng-model="configCtrl.configQuery.configName"
+                               autofocus="true" required/>
+
+                        <p ng-show="loadConfigForm.configName.$invalid && loadConfigForm.configName.$dirty"
+                           class="help-block">Please fill
+                            in the content</p>
+                    </div>
+
+                    <input type="submit" class="btn btn-primary col-sm-1" value="query"
+                           ng-disabled="loadConfigForm.$pristine || loadConfigForm.$invalid"/>
+                </div>
+                <div id="config-value-wrapper" class="clearfix">
+                    <label class="col-sm-2 control-label">Config Value</label>
+                    <div class="col-sm-3">
+                        <input type="text" name="configValue" class="form-control"
+                               ng-model="configCtrl.configQuery.configValue"
+                               readonly/>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 
 </div>
