@@ -8,6 +8,19 @@ spring:
       server:
         git:
           uri: ssh://git@10.3.2.56:1022/spring-cloud-config-repo.git
+          repos:
+            FQ-DEV:
+              pattern: "*/FQ_dev"
+              uri: ssh://git@10.3.2.56:1022/FQ/dev/{application}.git
+            FQ-PRD:
+              pattern: "*/FQ_prd"
+              uri: ssh://git@10.3.2.56:1022/FQ/prd/{application}.git
+            OY-DEV:
+              pattern: "*/OY_dev"
+              uri: ssh://git@10.3.2.56:1022/OY/dev/{application}.git
+            OY-PRD:
+              pattern: "*/OY_prd"
+              uri: ssh://git@10.3.2.56:1022/OY/prd/{application}.git
 
 server:
   port: 8888
