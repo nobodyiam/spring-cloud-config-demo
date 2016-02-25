@@ -17,7 +17,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 <![endif]-->
 <body>
-<h1>Hello!</h1>
+<div class="container-fluid" ng-include="'/templates/list.html'"></div>
 <script type="text/javascript" src="//cdn.bootcss.com/underscore.js/1.8.3/underscore-min.js"></script>
 <script type="text/javascript" src="/scripts/ui-bootstrap-0.13.0.min.js"></script>
 <script type="text/javascript" src="/scripts/ui-bootstrap-tpls-0.13.0.min.js"></script>

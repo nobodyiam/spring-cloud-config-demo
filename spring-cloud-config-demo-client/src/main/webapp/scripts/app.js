@@ -6,4 +6,8 @@
         'httpInterceptors' //custom http interceptor
     ]);
 
+    app.controller('CloudConfigController', function ($scope, $http, $modal, toastr) {
+
+    });
+
 })(jQuery);
