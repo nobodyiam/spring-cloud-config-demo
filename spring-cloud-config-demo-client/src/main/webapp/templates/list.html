@@ -1,3 +1,24 @@
 <div ng-controller="CloudConfigController as configCtrl">
-    <h1>Hello Inside!</h1>
+    <h1>Spring cloud config client sample</h1>
+
+    <h3>Current client env:</h3>
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr class="bg-info">
+            <th>Application</th>
+            <th>Profiles</th>
+            <th>Label</th>
+            <th>Server Uri</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{configCtrl.env.application}}</td>
+            <td>{{configCtrl.env.profiles}}</td>
+            <td>{{configCtrl.env.label}}</td>
+            <td>{{configCtrl.env.serverUri}}</td>
+        </tr>
+        </tbody>
+    </table>
+
 </div>
