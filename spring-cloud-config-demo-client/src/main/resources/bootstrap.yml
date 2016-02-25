@@ -1,9 +1,9 @@
 spring:
   application:
-    name: foo
+    name: hermes
   profiles:
-    active: development,production
+    active: OY_prd
   cloud:
     config:
-      uri: http://10.3.2.56:8888
-      label: someBranch
+      uri: http://localhost:8888
+      label: master
