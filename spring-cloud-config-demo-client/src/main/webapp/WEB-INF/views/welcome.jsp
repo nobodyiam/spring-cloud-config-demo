@@ -3,7 +3,7 @@
 <html ng-app="CloudConfig">
 <meta http-equiv=Content-Type content="text/html;charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Bootstrap</title>
+<title>Cloud Config Client</title>
 <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" href="/styles/angular-toastr-1.4.1.min.css"/>
 <link rel='stylesheet' href='/styles/loading-bar.min.css' type='text/css' media='all' />
