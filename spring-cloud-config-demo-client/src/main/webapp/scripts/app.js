@@ -7,8 +7,11 @@
     ]);
 
     app.controller('CloudConfigController', function ($scope, $http, $modal, toastr) {
+        var NONE = "none";
+
         this.env = {};
         this.configQuery = {};
+        this.refreshResult = NONE;
 
         var self = this;
 
@@ -31,6 +34,25 @@
                     toastr.error((data && data.msg) || 'Load config failed');
                 });
         };
+
+        this.refreshConfig = function() {
+            $http.post("refresh")
+                .success(function(data) {
+                    self.assembleRefreshResult(data);
+                })
+                .error(function(data, status) {
+                    toastr.error((data && data.msg) || 'Refresh config failed');
+                });
+
+        };
+
+        this.assembleRefreshResult = function(changedPropertyArray) {
+            if(!changedPropertyArray || !changedPropertyArray.length) {
+                this.refreshResult = NONE;
+                return;
+            }
+            this.refreshResult = changedPropertyArray.join(',');
+        }
 
         this.loadEnv();
 

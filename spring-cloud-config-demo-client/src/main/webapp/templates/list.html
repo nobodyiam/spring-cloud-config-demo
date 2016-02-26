@@ -47,9 +47,7 @@
                 <div id="config-value-wrapper" class="clearfix">
                     <label class="col-sm-2 control-label">Config Value</label>
                     <div class="col-sm-3">
-                        <input type="text" name="configValue" class="form-control"
-                               ng-model="configCtrl.configQuery.configValue"
-                               readonly/>
+                        <textarea rows="2" cols="38" readonly>{{configCtrl.configQuery.configValue}}</textarea>
                     </div>
                 </div>
             </div>
@@ -58,7 +56,10 @@
 
     <div id="refresh-config-wrapper">
         <h3>Refresh Config:</h3>
-
+        <button type="button" class="btn btn-primary" ng-click="configCtrl.refreshConfig()">Refresh Config</button>
+        <div id="refresh-result">
+            <strong>Changed Properties:</strong> {{configCtrl.refreshResult}}
+        </div>
     </div>
 
 </div>
