@@ -4,8 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-parent</artifactId>
-        <version>1.0.2.RELEASE</version>
+        <artifactId>spring-cloud-build</artifactId>
+        <version>1.1.0.M5</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -19,6 +20,7 @@
         <java.target.version>1.7</java.target.version>
         <project.encoding>UTF-8</project.encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring-cloud-config.version>1.1.0.M5</spring-cloud-config.version>
         <start-class>com.nobodyiam.spring.cloud.config.demo.client.Application</start-class>
     </properties>
 
@@ -26,6 +28,7 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-client</artifactId>
+            <version>${spring-cloud-config.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

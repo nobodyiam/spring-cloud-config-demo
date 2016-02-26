@@ -2,7 +2,7 @@ spring:
   application:
     name: hermes
   profiles:
-    active: OY_dev
+    active: FQ_dev
   cloud:
     config:
       uri: http://localhost:8888
