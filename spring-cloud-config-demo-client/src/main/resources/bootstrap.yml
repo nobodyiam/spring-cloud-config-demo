@@ -5,5 +5,5 @@ spring:
     active: OY_dev
   cloud:
     config:
-      uri: http://localhost:8888
+      uri: http://10.3.2.56:8888
       label: master
