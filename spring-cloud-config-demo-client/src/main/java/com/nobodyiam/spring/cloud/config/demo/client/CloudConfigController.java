@@ -3,6 +3,7 @@ package com.nobodyiam.spring.cloud.config.demo.client;
 import com.nobodyiam.spring.cloud.config.demo.model.Config;
 import com.nobodyiam.spring.cloud.config.demo.model.EnvironmentConfig;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.*;
@@ -22,6 +23,11 @@ public class CloudConfigController {
     @Autowired
     private Environment env;
 
+    @Value("${spring.profiles.active}")
+    private String currentActiveProfiles;
+
+    private String foo;
+
     @RequestMapping(value = "/config/{configName}", method = RequestMethod.GET)
     public Config queryConfig(@PathVariable String configName) {
         return new Config(configName, env.getProperty(configName, "undefined"));
@@ -37,4 +43,16 @@ public class CloudConfigController {
                 .build();
     }
 
+    public String getCurrentActiveProfiles() {
+        return currentActiveProfiles;
+    }
+
+    public String getFoo() {
+        return foo;
+    }
+
+    @Value("${foo}")
+    public void setFoo(String foo) {
+        this.foo = foo;
+    }
 }
