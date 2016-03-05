@@ -28,7 +28,7 @@ public class CloudConfigController {
 
     private String foo;
 
-    @RequestMapping(value = "/config/{configName}", method = RequestMethod.GET)
+    @RequestMapping(value = "/config/{configName:.*}", method = RequestMethod.GET)
     public Config queryConfig(@PathVariable String configName) {
         return new Config(configName, env.getProperty(configName, "undefined"));
     }

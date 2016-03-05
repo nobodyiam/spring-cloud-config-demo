@@ -26,7 +26,7 @@
         };
 
         this.queryConfig = function() {
-            $http.get("demo/config/" + this.configQuery.configName)
+            $http.get("demo/config/" + encodeURIComponent(this.configQuery.configName))
                 .success(function(data) {
                     self.configQuery.configValue = data.value;
                 })
