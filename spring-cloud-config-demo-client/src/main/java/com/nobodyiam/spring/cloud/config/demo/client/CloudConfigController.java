@@ -23,9 +23,7 @@ public class CloudConfigController {
     @Autowired
     private Environment env;
 
-    @Value("${spring.profiles.active}")
-    private String currentActiveProfiles;
-
+    @Value("${foo}")
     private String foo;
 
     @RequestMapping(value = "/config/{configName:.*}", method = RequestMethod.GET)
@@ -43,16 +41,7 @@ public class CloudConfigController {
                 .build();
     }
 
-    public String getCurrentActiveProfiles() {
-        return currentActiveProfiles;
-    }
-
     public String getFoo() {
         return foo;
-    }
-
-    @Value("${foo}")
-    public void setFoo(String foo) {
-        this.foo = foo;
     }
 }

@@ -1,8 +1,8 @@
 spring:
   application:
-    name: hermes
+    name: foo
   profiles:
-    active: FQ_dev
+    active: production
   cloud:
     config:
       uri: http://localhost:8888
