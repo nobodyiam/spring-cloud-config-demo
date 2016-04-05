@@ -1,6 +1,5 @@
 package com.nobodyiam.spring.cloud.config.demo.server;
 
-import com.jcraft.jsch.JSch;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.config.server.EnableConfigServer;
